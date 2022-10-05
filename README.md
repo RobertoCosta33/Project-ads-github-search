@@ -71,8 +71,8 @@ git pull origin master
 Isso se deve pelo fato da master ser sempre a branch que estará recebendo todas as alterações
 bem sucedidas do projeto, ou seja, ela seria em um projeto real o equivalente a branch de produção.
 
-2 - Agora que sua branch foi criada como uma ramificação da master, você pode fazer alterações no código.
-Para subir o progresso para a bsua branch remota, você deverá executar o seguinte comando no terminal:
+2 - Agora que sua branch foi criada como uma ramificação da master, você poderá fazer alterações no código.
+Para subir o progresso para a sua branch remota, você deverá executar o seguinte comando no terminal:
 git push origin feature/nome-da-sua-branch
 
 3 - Uma vez tendo finalizado sua tarefa, você precisará fazer um merge request para subir as alterações
