@@ -41,7 +41,9 @@ CTRL + SHIFT + "
 4 - Agora clique no terminal e cole o seguinte comando:
 git clone https://github.com/RobertoCosta33/Project-ads-github-search.git
 
-5 - Agora para instalar todos os pacotes necessários para abrir o programa, digite o seguinte comando:
+5 - Agora para instalar todos os pacotes necessários para abrir o programa, vá novamente em arquivos,
+abrir pasta e selecione a pasta com o nome project-ads-github-search que estará dentro da pasta
+que você criou no passo 1 deste capítulo e digite o seguinte comando:
 npm install
 
 #Rodando o projeto no navegador
