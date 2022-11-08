@@ -1,84 +1,92 @@
-# Onboarding - Front
+#Introdução
 
-## Introdução
+Neste guia você terá um passo a passo de quais ferramentas e os processos necessários para
+clonar e fazer alterações no projeto.
 
-Antes de iniciar sua jornada como desenvolvedor front-end no time de web da MedRoom, convidamos você a criar um pequeno projeto de exemplo, assim poderemos conhecer melhor suas habilidades técnicas e entender seu estilo de codificação!
+#Ferramentas
 
-Ah, e não se preocupe! Este projeto não é eliminatório e apenas serve para conhecermos seu lado técnico!
+1 - Baixe e instale o editor de código de sua preferência. (Indico o visual studio code).
+Link para download do visual studio code: https://code.visualstudio.com/
 
-## Iniciando
-
-Vamos começar! Siga o passo a passo abaixo e, se tiver alguma dúvida, chame alguém do time de web.
-
-1. Certifique-se que seguiu todos os passos do [projeto de Onboarding](https://gitlab.com/medroom-vr/plataform/onboarding)
-
-2. Clone este projeto em sua máquina com o comando: `git clone https://gitlab.com/medroom-vr/plataform/onboarding-front.git`
-
-3. Entre na pasta do projeto recém clonado e execute os seguintes comandos para criar uma nova branch e instalar as dependências:
-
-```powershell
-# Substitua <meu-nome> pelo seu primeiro nome
-git checkout -b "<meu-nome>-onboarding-front"
-yarn install
-```
-
-4. Abra o diretório do projeto em seu Visual Studio Code
-
-5. No terminal do Visual Studio Code, execute o comando: `yarn dev`
-
-6. O projeto estará disponível na URL: [http://localhost:3000](http://localhost:3000)
-
-7. Se você ver a seguinte página inicial ao acessar o link, parabéns! Você completou os passos iniciais! Agora vamos seguir para a explicação do projeto.
-
-![Página inicial do ambiente de desenvolvimento](docs/img/pag_inicial.jpg)
-
-## Projeto
-
-Agora mãos à obra! O seu objetivo vai ser criar uma simples aplicação que leia os dados de um usuário do GitHub. O esqueleto do projeto já está montado utilizando o framework [Next.JS](https://nextjs.org/learn/foundations/about-nextjs).
-
-Veja as funcionalidades esperadas e os mocks a seguir:
-
-> **Funcionalidades**:
-> 
-> 1. O usuário deverá ser capaz de procurar por um usuário no GitHub
-> 2. Ao clicar no botão de Buscar, o sistema deverá realizar a busca na API do GitHub para trazer as informações do usuário e de seus repositórios
-> 3. A busca também poderá ser ativada pela tecla "Enter" do teclado quando o foco estiver no campo de texto
-> 4. A tela deverá ter scroll para mostrar todo o resultado da busca
+2 - Baixe a versão LTS do Node.Js.
+Link para download do Node.Js: https://nodejs.org/en/
+Para verificar se a instalação do Node.Js foi bem sucedida, abra um prompt de comando
+(aperte a tecla winkey e digite cmd, depois aperte enter) e digite o seguinte comando:
+node --version
+Deverá exibir uma mensagem com a versão instalada do Node.js.
 
 
-- **Mock da página inicial:** esta é a primeira página a ser apresentada para o usuário. Ela é composta de um campo de busca (texto simples), um botão de buscar e um componente para indicar que não há dados a serem exibidos.
+3 - Baixe e instale a versão atual do Git.
+Link para download do Git: https://git-scm.com/
 
-![Mock da página inicial](docs/img/mock_pag_inicial.jpg)
+Para verificar se a instalação do git foi bem sucedida, abra um prompt de comando
+(aperte a tecla winkey e digite cmd, depois aperte enter) e digite o seguinte comando:
+git --version
+Deverá exibir uma mensagem com a versão instalada do git.
 
-- **Mock de uma busca:** após realizar uma busca, a tela é atualizada com as informações do usuário e a lista de seus repositórios.
+#Clonando o projeto
 
-a. **Para o usuário**, deverão aparecer as informações: imagem (foto), nome e localização geográfica
 
-b. **Para cada repositório**, deverão aparecer as informações: nome do repositório, número de estrelas, URL de acesso e data de criação (no formato dd/MM/yyyy)
+Para clonar o projeto, siga os seguintes passos:
 
-![Mock de uma busca](docs/img/mock_pag_busca.jpg)
+1 - Crie uma pasta com o nome que você desejar e onde você desejar.
 
-- **Layout:** o layout da tela ficará por sua conta! Se você quiser, poderá utilizar qualquer biblioteca de estilização ao seu gosto, ou poderá também manter o estilo padrão do navegador. Você decide!
+2 - Inicie o visual studio code, vá em arquivos no canto superior esquerdo,
+depois clicque em abrir pasta. Vá até a pasta que você criou no passo anterior
+e clique em abrir.
 
-- **Bibliotecas:** você poderá adicionar e utilizar qualquer biblioteca para auxiliá-lo no desenvolvimento do projeto. O único requisito técnico é que deve ser utilizado o [Next.JS](https://nextjs.org/learn/foundations/about-nextjs) como framework.
+3 - Abra um terminal no visual studio code com o seguinte comando:
+CTRL + SHIFT + "
 
-- **Typescript:** se você se sentir confortável, poderá usar Typescript (as dependências já estão instaladas, basta criar arquivos com a extensão .ts/.tsx). Caso contrário, não tem problema em usar Javascript!
+4 - Agora clique no terminal e cole o seguinte comando:
+git clone https://github.com/RobertoCosta33/Project-ads-github-search.git
 
-- Após finalizar o projeto, suba-o no GitLab com os comandos a seguir e nos avise!
+5 - Agora para instalar todos os pacotes necessários para abrir o programa, vá novamente em arquivos,
+abrir pasta e selecione a pasta com o nome project-ads-github-search que estará dentro da pasta
+que você criou no passo 1 deste capítulo e digite o seguinte comando:
+npm install
 
-```powershell
-git add .
-git commit -m "Projeto de onboarding"
-git push --set-upstream origin <meu-nome>-onboarding-front
-```
+#Rodando o projeto no navegador
 
-## API
+Agora finalmente para ver o projeto em seu navegador, no terminal do visual studio code, 
+basta digitar o seguinte comando:
+npm run dev
 
-Para desenvolver o projeto, você poderá utilizar a própria [API do GitHub](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api).
+Este comando irá gerar um link com o seguinte endereço:
+http://localhost:3000
 
-Você irá precisar especificamente dos seguintes endpoints:
+Basta segurar a tecla CTRL e clicar no link para abrir o projeto em seu navegador.
 
+
+#Fazendo alterações
+
+Para fazer alterações no código, você precisará criar uma feature e fazer uma pull request seguindo os seguintes passos:
+
+1 - Abra um terminal no visual studio code e digite o seguinte comando para criar sua branch de trabalho:
+git checkout -b feature/nome-da-sua-branch
+
+IMPORTANTE!
+Sempre antes de fazer qualquer alteração no código, faça um pull da branch principal 
+para evitar possiveis conflitos digitando o seguinte comando:
+git pull origin master
+
+Isso se deve pelo fato da master ser sempre a branch que estará recebendo todas as alterações
+bem sucedidas do projeto, ou seja, ela seria em um projeto real o equivalente a branch de produção.
+
+2 - Agora que sua branch foi criada como uma ramificação da master, você poderá fazer alterações no código.
+Para subir o progresso para a sua branch remota, você deverá executar o seguinte comando no terminal:
+git push origin feature/nome-da-sua-branch
+
+3 - Uma vez tendo finalizado sua tarefa, você precisará fazer um merge request para subir as alterações
+salvas na sua branch, para a branch principal do projeto (master).
+Para isso siga os passos deste tutorial: https://www.youtube.com/watch?v=Du04jBWrv4A
+Ou se preferir fale comigo através do Linkdein: https://www.linkedin.com/in/roberto-b-costa-000b91218
+
+
+#Endpoints ultilizados no projeto:
+
+Para receber a lista de usuários:
 a. **https://api.github.com/users/<nome do usuário>** *(retorna as informações do usuário)*
 
+Para receber a lista de repositórios publicos:
 b. **https://api.github.com/users/<nome do usuário>/repos** *(retorna a lista de repositórios do usuário)*
-
