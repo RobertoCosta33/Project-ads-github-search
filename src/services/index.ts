@@ -5,8 +5,13 @@ export const getUserInfos = async (user: string) => {
     const { data } = await axios.get(`http://api.github.com/users/${user}`);
     return data;
   } catch (error) {
-    console.error({ error, function: "getUserInfos" });
-    throw "Dados não encontrados";
+    const errorMessage =
+      "Usuário inválido! Por favor, tente novamente com outro usuário.";
+    console.error({
+      error,
+      function: "getUserInfos",
+    });
+    localStorage.setItem("userError", errorMessage);
   }
 };
 

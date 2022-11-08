@@ -9,10 +9,13 @@ export const MainContent: FC = () => {
   const [query, setQuery] = useState<string>("");
   const [userData, setUserData] = useState<any>();
   const [repositoryData, setRpositoryData] = useState<any[]>([]);
+  const [errorMessage, setErrorMessage] = useState<string>(
+    "Procure por um usuário para visualizar as informações..."
+  );
 
   const getData = async (user: string) => {
     const userData = await getUserInfos(user);
-    if (!userData) return;
+    if (!userData) return setErrorMessage(localStorage.getItem("userError"));
     const repositoryData = await getRepositorysInfos(user);
     return { userData, repositoryData };
   };
@@ -24,6 +27,7 @@ export const MainContent: FC = () => {
       setRpositoryData(data.repositoryData);
       setQuery("");
     }
+    return
   };
 
   const handleChange = ({
@@ -46,9 +50,7 @@ export const MainContent: FC = () => {
         />
       );
     } else {
-      return (
-        <span>Procure por um usuário para visualizar as informações...</span>
-      );
+      return <span>{errorMessage}</span>;
     }
   };
 
