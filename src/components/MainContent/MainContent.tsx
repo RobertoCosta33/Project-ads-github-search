@@ -4,6 +4,8 @@ import { UserHeader } from "../UserHeader";
 import { MainBox, UserInfosBox, StarsBox } from "./MainContent.styles";
 import { getUserInfos, getRepositorysInfos } from "../../services";
 import { UserBody } from "../UserBody";
+import minhaImagen from "../../../docs/img/pag_inicial.jpg"
+import Image from "next/image"
 
 export const MainContent: FC = () => {
   const [query, setQuery] = useState<string>("");
@@ -56,6 +58,11 @@ export const MainContent: FC = () => {
 
   return (
     <MainBox>
+      <Image
+      src={minhaImagen}
+      width={400}
+      height={200}
+      />
       <SearchContainer
         id="inputSearch"
         name="inputSearch"
