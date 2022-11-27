@@ -31,7 +31,7 @@ export const MainContent: FC = () => {
       setTimeout(() => {
         setHasData(true);
         setLoading(false);
-      }, 500);
+      }, 5000);
       setUserData(data.userData);
       setRpositoryData(data.repositoryData);
       setQuery("");
@@ -39,7 +39,7 @@ export const MainContent: FC = () => {
       setTimeout(() => {
         setLoading(false);
         // document.location.reload();
-      }, 500);
+      }, 5000);
     }
     return;
   };
