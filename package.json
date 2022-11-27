@@ -320,7 +320,9 @@
     "yocto-queue": "^0.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev",
+    "build": "next build"
   },
   "repository": {
     "type": "git",
@@ -332,5 +334,8 @@
   "bugs": {
     "url": "https://github.com/RobertoCosta33/Project-ads-github-search/issues"
   },
-  "homepage": "https://github.com/RobertoCosta33/Project-ads-github-search#readme"
+  "homepage": "https://github.com/RobertoCosta33/Project-ads-github-search#readme",
+  "devDependencies": {
+    "@types/react": "^18.0.25"
+  }
 }
