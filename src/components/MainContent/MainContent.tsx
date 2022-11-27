@@ -1,10 +1,9 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { SearchContainer } from "../SearchContainer";
 import { UserHeader } from "../UserHeader";
 import { MainBox, UserInfosBox, StarsBox, Load } from "./MainContent.styles";
 import { getUserInfos, getRepositorysInfos } from "../../services";
 import { UserBody } from "../UserBody";
-
 
 export const MainContent: FC = () => {
   const [query, setQuery] = useState<string>("");
@@ -26,7 +25,7 @@ export const MainContent: FC = () => {
   const handleClick = async () => {
     setHasData(false);
     setLoading(true);
-    
+
     const data = await getData(query);
     if (data) {
       setTimeout(() => {
@@ -36,9 +35,10 @@ export const MainContent: FC = () => {
       setUserData(data.userData);
       setRpositoryData(data.repositoryData);
       setQuery("");
-    } else { 
+    } else {
       setTimeout(() => {
-        setLoading(false)
+        setLoading(false);
+        // document.location.reload();
       }, 500);
     }
     return;
@@ -55,15 +55,13 @@ export const MainContent: FC = () => {
   };
 
   const addUserHeader = () => {
-    if (userData) {
+    if (userData && hasData) {
       return (
-        hasData && (
-          <UserHeader
-            name={userData?.name}
-            image={userData?.avatar_url}
-            location={userData?.location}
-          />
-        )
+        <UserHeader
+          name={userData?.name}
+          image={userData?.avatar_url}
+          location={userData?.location}
+        />
       );
     } else {
       return <span>{errorMessage}</span>;
