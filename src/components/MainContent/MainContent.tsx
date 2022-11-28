@@ -1,7 +1,13 @@
 import { FC, useEffect, useState } from "react";
 import { SearchContainer } from "../SearchContainer";
 import { UserHeader } from "../UserHeader";
-import { MainBox, UserInfosBox, StarsBox, Load } from "./MainContent.styles";
+import {
+  MainBox,
+  UserInfosBox,
+  StarsBox,
+  Load,
+  Error,
+} from "./MainContent.styles";
 import { getUserInfos, getRepositorysInfos } from "../../services";
 import { UserBody } from "../UserBody";
 import Link from "next/link";
@@ -15,10 +21,15 @@ export const MainContent: FC = () => {
   const [errorMessage, setErrorMessage] = useState<string>(
     "Procure por um usuário para visualizar as informações..."
   );
+  const [hasError, setHasError] = useState<boolean>(false);
 
   const getData = async (user: string) => {
     const userData = await getUserInfos(user);
-    if (!userData) return setErrorMessage(localStorage.getItem("userError"));
+    if (!userData) {
+      setErrorMessage(localStorage.getItem("userError"));
+      setHasError(true);
+      return;
+    }
     const repositoryData = await getRepositorysInfos(user);
     return { userData, repositoryData };
   };
@@ -64,7 +75,7 @@ export const MainContent: FC = () => {
         />
       );
     } else {
-      return <span>{errorMessage}</span>;
+      return <Error hasError={hasError}>{errorMessage}</Error>;
     }
   };
 

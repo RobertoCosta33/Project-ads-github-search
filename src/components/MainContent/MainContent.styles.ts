@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const MainBox = styled.div`
   background-color: #f1f1f1;
@@ -53,4 +53,14 @@ export const Load = styled.div`
       transform: rotate(360deg);
     }
   }
+`;
+
+type ErrorProps = {
+  hasError: boolean;
+};
+
+export const Error = styled.span<ErrorProps>`
+  ${({ hasError }) => css`
+    color: ${hasError && "red"};
+  `}
 `;
