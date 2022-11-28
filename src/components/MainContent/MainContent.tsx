@@ -4,6 +4,7 @@ import { UserHeader } from "../UserHeader";
 import { MainBox, UserInfosBox, StarsBox, Load } from "./MainContent.styles";
 import { getUserInfos, getRepositorysInfos } from "../../services";
 import { UserBody } from "../UserBody";
+import Link from "next/link";
 
 export const MainContent: FC = () => {
   const [query, setQuery] = useState<string>("");
@@ -88,7 +89,12 @@ export const MainContent: FC = () => {
               <div key={i}>
                 <UserInfosBox>
                   <p>Nome do repositório: {repo.name}</p>
-                  <p>Link: {repo.html_url}</p>
+                  <p>
+                    Link:{" "}
+                    <Link href={repo.html_url} passHref>
+                      <a target="_blank">{repo.html_url}</a>
+                    </Link>
+                  </p>
                   <p>Data de criação: {repo.created_at}</p>
                 </UserInfosBox>
                 <StarsBox>
