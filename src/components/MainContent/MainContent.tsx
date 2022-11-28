@@ -31,15 +31,14 @@ export const MainContent: FC = () => {
       setTimeout(() => {
         setHasData(true);
         setLoading(false);
-      }, 5000);
+      }, 500);
       setUserData(data.userData);
       setRpositoryData(data.repositoryData);
       setQuery("");
     } else {
       setTimeout(() => {
         setLoading(false);
-        // document.location.reload();
-      }, 5000);
+      }, 500);
     }
     return;
   };
