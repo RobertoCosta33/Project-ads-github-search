@@ -13,4 +13,13 @@ export const UserBodyBox = styled.div`
 
   overflow-y: scroll;
   height: 100vh;
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    background-color: #bbb;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #fff;
+  }
 `;
