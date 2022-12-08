@@ -13,6 +13,7 @@ export const InputSearch: FC<IInputSeacrhProps> = ({
 }) => {
   return (
     <Input
+      data-testid="input-search"
       type={type}
       name={name}
       id={id}
