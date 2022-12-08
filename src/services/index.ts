@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getUserInfos = async (user: string) => {
   try {
-    const { data } = await axios.get(`https://api.github.com/users/${user}`);
+    const { data } = await axios.get(`http://api.github.com/users/${user}`);
     return data;
   } catch (error) {
     const errorMessage =

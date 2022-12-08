@@ -10,16 +10,4 @@ export const UserBodyBox = styled.div`
   flex-direction: column;
   background-color: #bbb;
   word-wrap: break-word;
-
-  overflow-y: scroll;
-  height: 100vh;
-
-  ::-webkit-scrollbar {
-    width: 6px;
-    background-color: #bbb;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: #fff;
-  }
 `;

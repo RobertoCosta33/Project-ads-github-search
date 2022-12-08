@@ -4,7 +4,6 @@ import { InputSearch } from "../InputSearch";
 import { SearchButton } from "../SearchButton";
 import { SearchBox } from "./SearchContainer.styles";
 
-
 export const SearchContainer: FC<ISearchContainerProps> = ({
   type,
   name,
